@@ -78,7 +78,7 @@ dependencies = [
 [[package]]
 name = "ce-gate"
 version = "0.1.0"
-source = "git+https://github.com/Leif-Rydenfalk/rust-stack?rev=2aede6d81d2d856d1d17b383624dfd19ce6aeba9#2aede6d81d2d856d1d17b383624dfd19ce6aeba9"
+source = "git+https://github.com/Leif-Rydenfalk/rust-stack?rev=d283bd528f96effabcf4dec56eb4fad1bec08d27#d283bd528f96effabcf4dec56eb4fad1bec08d27"
 dependencies = [
  "ce-cap",
  "ce-identity",
@@ -108,7 +108,7 @@ dependencies = [
 [[package]]
 name = "ce-wire"
 version = "0.1.0"
-source = "git+https://github.com/Leif-Rydenfalk/rust-stack?rev=2aede6d81d2d856d1d17b383624dfd19ce6aeba9#2aede6d81d2d856d1d17b383624dfd19ce6aeba9"
+source = "git+https://github.com/Leif-Rydenfalk/rust-stack?rev=d283bd528f96effabcf4dec56eb4fad1bec08d27#d283bd528f96effabcf4dec56eb4fad1bec08d27"
 dependencies = [
  "nix",
  "postcard",
@@ -178,7 +178,7 @@ dependencies = [
 [[package]]
 name = "cr-sources"
 version = "0.1.0"
-source = "git+https://github.com/Leif-Rydenfalk/cr-sources?rev=d27d051e86090c02644412ed850b08b95b927b5a#d27d051e86090c02644412ed850b08b95b927b5a"
+source = "git+https://github.com/Leif-Rydenfalk/cr-sources?rev=8b085433cc1f51d5965e8cb4aa1c45379c56777c#8b085433cc1f51d5965e8cb4aa1c45379c56777c"
 dependencies = [
  "ce-gate",
  "ce-wire",
@@ -822,7 +822,7 @@ checksum = "b6f5e870be6c3b371b77fe0ee0bafb859fa4964b4404c27de1d380043c4dda20"
 [[package]]
 name = "ui-chain"
 version = "0.1.0"
-source = "git+https://github.com/ce-net/ui-cells?rev=12b36bc5e02f139858c9cc90fff0c7b4f58ab9a3#12b36bc5e02f139858c9cc90fff0c7b4f58ab9a3"
+source = "git+https://github.com/ce-net/ui-cells?rev=103703220a8554d07af1ed6a1eea5ef0e5a72090#103703220a8554d07af1ed6a1eea5ef0e5a72090"
 dependencies = [
  "ce-gate",
  "ce-wire",
@@ -832,7 +832,7 @@ dependencies = [
 [[package]]
 name = "ui-part"
 version = "0.1.0"
-source = "git+https://github.com/ce-net/ui-cells?rev=12b36bc5e02f139858c9cc90fff0c7b4f58ab9a3#12b36bc5e02f139858c9cc90fff0c7b4f58ab9a3"
+source = "git+https://github.com/ce-net/ui-cells?rev=103703220a8554d07af1ed6a1eea5ef0e5a72090#103703220a8554d07af1ed6a1eea5ef0e5a72090"
 dependencies = [
  "ce-wire",
 ]
