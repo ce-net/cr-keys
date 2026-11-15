@@ -111,9 +111,9 @@ async fn serve() -> Result<(), String> {
                 Ok(rows)
             }
         })
-        .on::<Sources, _, _>(move |_: (), _| {
+        .on::<Sources, _, _>(move |_: (), who| {
             let p = p3.clone();
-            async move { Ok(sources(&*p.read().await)) }
+            async move { Ok(sources_for(&who, sources(&*p.read().await))) }
         })
         .stream::<Watch, _, _>(move |q: KeysQuery, who, sink| {
             let (p, mut rx) = (p4.clone(), rx.clone());

@@ -15,8 +15,7 @@ start_timeout_ms = 5000
 restart_backoff_ms = [1000, 300000]
 
 [placement]
-# active-active, stateless: any replica answers (control-room docs/DESIGN.md section 9)
-nodes = ["foreman-ops-1", "leif-desk"]
+# where it runs is the deploy's placement table (repo:control-room docs/DESIGN.md section 11), not this file
 
 [limits]
 disk_bytes = "128M"
