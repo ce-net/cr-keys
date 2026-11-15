@@ -84,7 +84,8 @@ fn sources(g: &Projection) -> Vec<Source> {
 }
 
 async fn serve() -> Result<(), String> {
-    let me = ce_gate::node_identity().map_err(|e| e.to_string())?;
+    // this cell's own key and narrow grant (never the node's key); the gate roots callers' chains at the grant's root
+    let me = ui_chain::init(CELL)?.root();
     let started = Instant::now();
     let p: Shared = Arc::new(RwLock::new(Projection::default()));
     let (tx, rx) = watch::channel(0u64);
@@ -98,7 +99,7 @@ async fn serve() -> Result<(), String> {
         });
     }
     let (p2, p3, p4, p1) = (p.clone(), p.clone(), p.clone(), p.clone());
-    let gate = ce_gate::Gate::<CrKeys>::new(me.node_id(), ce_gate::mesh_roots()).into_fn();
+    let gate = ce_gate::Gate::<CrKeys>::new(me, ce_gate::mesh_roots()).into_fn();
     let v2 = Server::<CrKeys>::new(gate)
         .on::<HealthOp, _, _>(move |_: (), _| async move { Ok(Health { ok: true, version: env!("CARGO_PKG_VERSION").into(), uptime_s: started.elapsed().as_secs() }) })
         .on::<List, _, _>(move |q: KeysQuery, who| {
@@ -148,7 +149,7 @@ async fn serve() -> Result<(), String> {
 
     // major 1, frozen: the first edition's envelope from the same projection
     use cr_keys_api::versions::v1 as old;
-    let gate1 = ce_gate::Gate::<old::CrKeys>::new(me.node_id(), ce_gate::mesh_roots()).into_fn();
+    let gate1 = ce_gate::Gate::<old::CrKeys>::new(me, ce_gate::mesh_roots()).into_fn();
     let p5 = p1.clone();
     let v1 = Server::<old::CrKeys>::new(gate1)
         .on::<old::HealthOp, _, _>(move |_: (), _| async move { Ok(old::Health { ok: true, version: env!("CARGO_PKG_VERSION").into(), uptime_s: started.elapsed().as_secs() }) })

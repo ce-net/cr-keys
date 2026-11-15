@@ -16,6 +16,10 @@ use ui_part::Parts;
 
 /// What this cell may do on `keys`. Never `keys:read`, `keys:write` or `keys:*` (tests/no_values.rs).
 pub const SOURCE_ABILITIES: &[&str] = &["keys:list", "keys:meta"];
+/// The one grant this cell's own key holds, minted by the node for exactly what it reads (`ce-iam grant --to <cell key>
+/// --action <each>`, kept with the key in `<ce data dir>/cell-keys/cr.keys/`); every source token is attenuated from it
+/// ([`ui_chain::source_token`]). A taken backend holds this, never the node's root.
+pub const GRANT: &[&str] = &["keys:list", "keys:meta", "ui.trace:write", "delegate:1"];
 /// The renewal window of the keys autopilot (repo:keys-cell crates/keys-client/src/autopilot.rs `share_days`).
 pub const WINDOW_DAYS: i64 = 30;
 pub const DAY: i64 = 86_400;

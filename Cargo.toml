@@ -8,11 +8,11 @@ license = "Apache-2.0"
 publish = false
 
 [workspace.dependencies]
-ce-wire = { git = "https://github.com/Leif-Rydenfalk/rust-stack", rev = "7083669b3240dce8dbc66142d7c9e127fab4aedf" }
-ce-gate = { git = "https://github.com/Leif-Rydenfalk/rust-stack", rev = "7083669b3240dce8dbc66142d7c9e127fab4aedf" }
-ui-part = { git = "https://github.com/ce-net/ui-cells", rev = "c4e6e2a94b58bfd363c6b91b18540e11a0902403" }
-ui-chain = { git = "https://github.com/ce-net/ui-cells", rev = "c4e6e2a94b58bfd363c6b91b18540e11a0902403" }
-cr-sources = { git = "https://github.com/Leif-Rydenfalk/cr-sources", rev = "9016512371f6a445c9a5a28cde19ccfbe51d1af5" }
+ce-wire = { git = "https://github.com/Leif-Rydenfalk/rust-stack", rev = "2aede6d81d2d856d1d17b383624dfd19ce6aeba9" }
+ce-gate = { git = "https://github.com/Leif-Rydenfalk/rust-stack", rev = "2aede6d81d2d856d1d17b383624dfd19ce6aeba9" }
+ui-part = { git = "https://github.com/ce-net/ui-cells", rev = "12b36bc5e02f139858c9cc90fff0c7b4f58ab9a3" }
+ui-chain = { git = "https://github.com/ce-net/ui-cells", rev = "12b36bc5e02f139858c9cc90fff0c7b4f58ab9a3" }
+cr-sources = { git = "https://github.com/Leif-Rydenfalk/cr-sources", rev = "d27d051e86090c02644412ed850b08b95b927b5a" }
 
 [profile.release]
 lto = "thin"
