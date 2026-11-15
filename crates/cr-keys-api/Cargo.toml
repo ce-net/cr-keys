@@ -1,0 +1,11 @@
+[package]
+name = "cr-keys-api"
+version = "0.2.0"
+description = "cr.keys@2: the Keys view cell's contract (key metadata rows, never a value) and its KeyList view; v1 frozen in src/versions/v1.rs"
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+ce-wire = { workspace = true, features = ["client"] }
+ui-part = { workspace = true }

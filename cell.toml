@@ -1,0 +1,22 @@
+# One repo = one cell = one function. Key metadata rows for the control room's Keys panel.
+[cell]
+api = "cr.keys"
+crate = "cr-keys"
+# majors served: 2 (live) and 1 (frozen, crates/cr-keys-api/src/versions/v1.rs)
+args = ["serve"]
+kind = "function"
+
+# Cells this one calls, as <api>@<major>; none is started by it (a view cell reports a missing source, it does not need it to start).
+depends_on = []
+
+[launch]
+health = "HealthOp"
+start_timeout_ms = 5000
+restart_backoff_ms = [1000, 300000]
+
+[placement]
+# active-active, stateless: any replica answers (control-room docs/DESIGN.md section 9)
+nodes = ["foreman-ops-1", "leif-desk"]
+
+[limits]
+disk_bytes = "128M"

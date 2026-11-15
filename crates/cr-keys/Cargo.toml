@@ -1,0 +1,26 @@
+[package]
+name = "cr-keys"
+version = "0.2.0"
+description = "The cr.keys cell: key metadata rows for the control room (holders, expiry, rotation state), never a value; majors 2 and 1"
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "cr-keys"
+path = "src/main.rs"
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+cr-keys-api = { path = "../cr-keys-api" }
+ui-part = { workspace = true }
+ui-chain = { workspace = true }
+cr-sources = { workspace = true }
+ce-wire = { workspace = true, features = ["server", "client"] }
+ce-gate = { workspace = true }
+tokio = { version = "1", features = ["rt", "rt-multi-thread", "macros", "time", "sync"] }
+
+[dev-dependencies]
+serde_json = "1"
